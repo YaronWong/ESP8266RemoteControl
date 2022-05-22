@@ -139,7 +139,16 @@ const uint8_t PORT_D = D7; //`
 
   `const int httpPort = 8000;` 	
 
-  
+
+补充一句： 第一次解除物联硬件开发，C++现学现卖，写起来很慢，也不规范，
+
+另外就是ESP8266的网路库，我开始想使用HTTPClient库，网络请求回来一直重启，查资料说可能是电压不稳，多次尝试无法修复，改用了WiFiClient库，
+
+WiFiClient库写起来，需要拼接header和body，第一次差点崩溃，不知道哪里缺少个空格或者回车，后来想到一个办法
+
+先把服务端搭起来，使用FastAPI的 测试接口进行测试，使用Charles抓包，Charles可以明显的看出Header和body格式，方便拼接。
+
+也可能是我使用不熟，有更好些GET和POST的方案，有的话欢迎告知，
 
 ##### ESP8266连接继电器和红外开关
 
