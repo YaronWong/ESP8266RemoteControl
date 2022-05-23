@@ -139,16 +139,25 @@ const uint8_t PORT_D = D7; //`
 
   `const int httpPort = 8000;` 	
 
+补充1： 
 
-补充一句： 第一次解除物联硬件开发，C++现学现卖，写起来很慢，也不规范，
+> 第一次解除物联硬件开发，C++现学现卖，写起来很慢，也不规范，
+>
+> 另外就是ESP8266的网路库，我开始想使用HTTPClient库，网络请求回来一直重启，查资料说可能是电压不稳，多次尝试无法修复，改用了WiFiClient库，
+>
+> WiFiClient库写起来，需要拼接header和body，第一次差点崩溃，不知道哪里缺少个空格或者回车，后来想到一个办法
+>
+> 先把服务端搭起来，使用FastAPI的 测试接口进行测试，使用Charles抓包，Charles可以明显的看出Header和body格式，方便拼接。
+>
+> 也可能是我使用不熟，有更好些GET和POST的方案，有的话欢迎告知，
 
-另外就是ESP8266的网路库，我开始想使用HTTPClient库，网络请求回来一直重启，查资料说可能是电压不稳，多次尝试无法修复，改用了WiFiClient库，
+![image-20220523095930084](README.assets/image-20220523095930084.png)
 
-WiFiClient库写起来，需要拼接header和body，第一次差点崩溃，不知道哪里缺少个空格或者回车，后来想到一个办法
+补充2
 
-先把服务端搭起来，使用FastAPI的 测试接口进行测试，使用Charles抓包，Charles可以明显的看出Header和body格式，方便拼接。
+> 编写过程，开始使用Arduino，不支持连提示和格式化，对于用IDEA快捷键的人着实不习惯，后来配置了VS环境
 
-也可能是我使用不熟，有更好些GET和POST的方案，有的话欢迎告知，
+
 
 ##### ESP8266连接继电器和红外开关
 
@@ -173,14 +182,14 @@ WiFiClient库写起来，需要拼接header和body，第一次差点崩溃，不
 ​	MySql 地址和 端口，
 
 ```
-ipname = "101.35.199.224"
+ipname = "101.xxx.xxx.xxx"
 duankou = 3306
-DB_NAME = "mcu"
-userName = "mcu"
-pwd = "3sYxS8MaZYKNNt23"
+DB_NAME = "db_name"
+userName = "userName"
+pwd = "pwd"
 ```
 
-​	数据库初始化文件：nasdaq.sql
+​	数据库初始化文件：`nasdaq.sql`
 
 FastAPI本地部署：
 
