@@ -105,7 +105,7 @@ const uint8_t PORT_D = D7; //`
 
 其中，负极接地是通用一根，参考图：
 
-![image-20220522203020354](Esp8266远程控制 电子门.assets/image-20220522203020354.png)
+![image-20220522203020354](assets/image-20220522203020354.png)
 
 
 
@@ -151,7 +151,7 @@ const uint8_t PORT_D = D7; //`
 >
 > 也可能是我使用不熟，有更好些GET和POST的方案，有的话欢迎告知，
 
-![image-20220523095930084](README.assets/image-20220523095930084.png)
+![image-20220523095930084](assets/image-20220523095930084.png)
 
 补充2
 
